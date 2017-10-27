@@ -1,0 +1,16 @@
+blogs <- readLines("en_US.blogs.txt", encoding="UTF-8")
+twitter <- readLines("en_US.twitter.txt", encoding="UTF-8")
+news <- readLines("en_US.news.txt", encoding="UTF-8")
+
+#Summary
+library(stringi)
+words_blogs<- stri_count_words(blogs)
+words_news<- stri_count_words(news)
+words_twitter<- stri_count_words(twitter)
+summary(words_blogs)
+summary(words_news)
+summary(words_twitter)
+library(ggplot2)
+qplot(words_blogs)
+qplot(words_news)
+qplot(words_twitter)
